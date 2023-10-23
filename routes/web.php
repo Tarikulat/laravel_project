@@ -19,6 +19,14 @@ Route::get('/', function () {
 
 //....Tanvir start Router create.......
 
+Route::controller(DashboardController::class)->group(function() {
+    Route::get('/dheader', 'index')-> name('dheader');
+});
+
+
+
+
+
 Route::controller(ProductController::class)->group(function() {
      Route::get('/welcome', 'index')-> name('tanvir');
 });
