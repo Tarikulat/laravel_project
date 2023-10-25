@@ -1,6 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Admin\AdminLoginController;
+// use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,26 +21,32 @@ Route::get('/', function () {
 
 //....Tanvir start Router create.......
 
-Route::controller(DashboardController::class)->group(function() {
-    Route::get('/dheader', 'index')-> name('dheader');
+
+//admin login Routes...........
+
+
+Route::group(['prefix' => 'admin'],function(){
+
+    Route::group(['middleware' => 'admin.guest'],function(){
+        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
+
+    });
+
+    Route::group(['middlewere' => 'admin.auth'],function(){
+
+
+    });
+
 });
 
 
 
 
+// Route::controller(DashboardController::class)->group(function() {
+//     Route::get('/r', 'd')-> name('dheader');
+// });
 
-Route::controller(ProductController::class)->group(function() {
-     Route::get('/welcome', 'index')-> name('tanvir');
-});
 
-Route::controller(AlladsController::class)->group(function() {
-    Route::get('/allads', 'index')-> name('ads');
-});
 
-Route::controller(ProductViewController::class)->group(function() {
-    Route::get('/productview', 'index')-> name('productview');
-});
 
-Route::controller(UserProfileController::class)->group(function() {
-    Route::get('/userprofile', 'index')-> name('userprofile');
-});
