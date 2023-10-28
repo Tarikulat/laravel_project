@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\AdminLoginController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 
 
 /*
@@ -26,27 +26,27 @@ Route::get('/', function () {
 //admin login Routes below...........
 
 
-// Route::group(['prefix' => 'admin'],function(){
+Route::group(['prefix' => 'admin'],function(){
 
-//     Route::group(['middleware' => 'admin.guest'],function(){
-//         Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
-//         Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
+    Route::group(['middleware' => 'admin.guest'],function(){
+        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
 
-//     });
+    });
 
-//     Route::group(['middlewere' => 'admin.auth'],function(){
-
-
-//     });
-
-// });
+    Route::group(['middlewere' => 'admin.auth'],function(){
 
 
+    });
+
+});
 
 
-// Route::controller(DashboardController::class)->group(function() {
-//     Route::get('/r', 'd')-> name('dashboard');
-// });
+
+
+Route::controller(DashboardController::class)->group(function() {
+    Route::get('/r', 'index')-> name('dashboard');
+});
 
 
 
