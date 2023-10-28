@@ -37,10 +37,10 @@
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link p-0 pr-3" data-toggle="dropdown" href="#">
-							<img src="img/avatar5.png" class='img-circle elevation-2' width="40" height="40" alt="">
+							<img src="{{ asset('admin-assets/img/tarikul.jpg') }}" class='img-circle elevation-2' width="40" height="40" alt="">
 						</a>
 						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-3">
-							<h4 class="h4 mb-0"><strong>Mohit Singh</strong></h4>
+							<h4 class="h4 mb-0"><strong>Tarikul Islam</strong></h4>
 							<div class="mb-3">example@example.com</div>
 							<div class="dropdown-divider"></div>
 							<a href="#" class="dropdown-item">
@@ -63,8 +63,8 @@
 			<aside class="main-sidebar sidebar-dark-primary elevation-4">
 				<!-- Brand Logo -->
 				<a href="#" class="brand-link">
-					<img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-					<span class="brand-text font-weight-light">LARAVEL SHOP</span>
+					<img src="{{ asset('admin-assets/img/logo1.jpg') }}"  class='img-circle elevation-2' width="40" height="40" alt="">
+					<span class="brand-text font-weight-light">Admin Panel</span>
 				</a>
 				<!-- Sidebar -->
 				<div class="sidebar">

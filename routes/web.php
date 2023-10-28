@@ -1,8 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\AdminLoginController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminLoginController;   //..login
+use App\Http\Controllers\Admin\DashboardController;   //..admin
+use App\Http\Controllers\ProductController;          //..product
 
 
 /*
@@ -22,10 +23,7 @@ Route::get('/', function () {
 
 //....Tanvir start Router create.......
 
-
 //admin login Routes below...........
-
-
 Route::group(['prefix' => 'admin'],function(){
 
     Route::group(['middleware' => 'admin.guest'],function(){
@@ -47,6 +45,8 @@ Route::group(['prefix' => 'admin'],function(){
 Route::controller(DashboardController::class)->group(function() {
     Route::get('/r', 'index')-> name('dashboard');
 });
+
+Route::resource('products', ProductController::class);
 
 
 
