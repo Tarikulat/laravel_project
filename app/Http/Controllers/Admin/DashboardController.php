@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index() {
-        return view('Backend.admin.dashboard');
+        return view('Backend.admin.dhome');
+    }
+
+    public function product_layouts() {
+        return view('Backend.admin.layouts');
     }
 }

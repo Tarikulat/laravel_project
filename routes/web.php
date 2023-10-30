@@ -43,8 +43,15 @@ Route::get('/', function () {
 
 
 Route::controller(DashboardController::class)->group(function() {
-    Route::get('/r', 'index')-> name('dashboard');
+    Route::get('/r', 'index')-> name('dhome');
 });
+
+
+Route::controller(ProductController::class)->group(function() {
+    Route::get('/t', 'index')-> name('layouts');
+});
+
+
 
 Route::resource('products', ProductController::class);
 
