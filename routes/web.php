@@ -24,20 +24,20 @@ Route::get('/', function () {
 //....Tanvir start Router create.......
 
 //admin login Routes below...........
-Route::group(['prefix' => 'admin'],function(){
+// Route::group(['prefix' => 'admin'],function(){
 
-    Route::group(['middleware' => 'admin.guest'],function(){
-        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
-        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
+//     Route::group(['middleware' => 'admin.guest'],function(){
+//         Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+//         Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
 
-    });
+//     });
 
-    Route::group(['middlewere' => 'admin.auth'],function(){
+//     Route::group(['middlewere' => 'admin.auth'],function(){
 
 
-    });
+//     });
 
-});
+// });
 
 
 

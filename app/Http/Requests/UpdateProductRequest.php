@@ -24,9 +24,15 @@ class UpdateProductRequest extends FormRequest
         return [
             'code' => 'required|string|max:50|unique:products,code,'.$this->product->id,
             'name' => 'required|string|max:250',
+            'description' => 'nullable|string',
             'quantity' => 'required|integer|min:1|max:10000',
             'price' => 'required',
-            'description' => 'nullable|string'
+
+
+            'discount' => 'required',
+            'catagory' => 'required|string',
+            'image' => 'required',
+            'status' => 'required',
         ];
     }
 }

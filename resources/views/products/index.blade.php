@@ -19,10 +19,19 @@
                     <thead>
                       <tr>
                         <th scope="col">S#</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">P_Code</th>
+                        <th scope="col">P_Title</th>
+                        <th scope="col">P_Description </th>
+                        <th scope="col">P_Quantity</th>
+                        <th scope="col">P_Price</th>
+
+                         <!-- add new tan -->
+                        <th scope="col">P_Discount</th>
+
+                        <th scope="col">P_Catagory </th>
+                        <th scope="col">P_Image</th>
+                        <th scope="col">Status</th>
+
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -32,8 +41,15 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $product->code }}</td>
                             <td>{{ $product->name }}</td>
+                            <td>{{ $product->description }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->price }}</td>
+
+                            <!-- add new tan -->
+                            <td>{{ $product->discount }}</td>
+                            <td>{{ $product->catagory }}</td>
+                            <td>{{ $product->image }}</td>
+                            <td>{{ $product->status }}</td>
                             <td>
                                 <form action="{{ route('products.destroy', $product->id) }}" method="post">
                                     @csrf
