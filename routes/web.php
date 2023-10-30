@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\AdminLoginController;   //..login
 use App\Http\Controllers\Admin\DashboardController;   //..admin
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProductController;          //..product
 
 
@@ -17,11 +18,15 @@ use App\Http\Controllers\ProductController;          //..product
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //....Tanvir start Router create.......
+
+Route::get('/',[FrontController::class,'index'])->name('Frontend.home');
+
+
 
 //admin login Routes below...........
 // Route::group(['prefix' => 'admin'],function(){
