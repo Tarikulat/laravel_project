@@ -73,4 +73,8 @@ Route::get('/test', function () {
     return view('products.test.newtest');
 });
 
+Route::get('/graph', function () {
+    return view('products.test.graph');
+});
+
 
