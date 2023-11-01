@@ -28,10 +28,10 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Products details</span> <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-ship"></i> <span>Products details</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/test"><i class="fa fa-circle-o"></i> CategoryS</a></li>
+                    <li><a href="/test"><i class="fa fa-circle-o"></i> Categorys</a></li>
                     <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Sub Categorys</a></li>
                     <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Brand</a></li>
                     <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Product Manage</a></li>
@@ -42,22 +42,47 @@
 
                 </ul>
             </li>
+
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>Order Information</span>
-                    <span class="label label-primary pull-right">4</span>
+                    <i class="fa fa-users"></i>
+                    <span>Customers</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i>Order Manage</a></li>
+                    <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>New Customers</a></li>
+                    <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i>Manage Customers</a></li>
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span> Stock</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Product </a></li>
+                    <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i>Manage Customers</a></li>
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cart-plus"></i>
+                    <span>Purchase </span>
+                    <span class="label label-primary pull-right">3</span>
+                </a>
+                <ul class="treeview-menu">
                     <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Place Order</a></li>
+                    <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i>Order Manage</a></li>
                     <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Pick-point orders</a></li>
 
                 </ul>
             </li>
             <li>
                 <a href="../widgets.html">
-                    <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">Hot</small>
+                    <i class="fa fa-book"></i> <span>Sell Reports</span> <small class="label pull-right bg-green">update</small>
                 </a>
             </li>
             <li class="treeview">
@@ -74,28 +99,27 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>UI Elements</span>
+                    <i class="fa fa-users"></i>
+                    <span>Suppliers</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                    <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                    <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                    <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                    <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                    <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                    <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> Supplier Order</a></li>
+                    <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Deliveries</a></li>
+                    <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Return Product</a></li>
+                    <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Shipment</a></li>
+
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-edit"></i> <span>Forms</span>
+                    <i class="fa fa-bank"></i> <span>Payments Gateway</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                    <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                    <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                    <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> Payment Gateway Setup</a></li>
+                    <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Checkout</a></li>
+                    <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Manage</a></li>
                 </ul>
             </li>
             <li class="treeview">
