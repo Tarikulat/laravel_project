@@ -24,7 +24,7 @@ use App\Http\Controllers\ProductController;          //..product
 
 //....Tanvir start Router create.......
 
-Route::get('/',[FrontController::class,'index'])->name('Frontend.home');
+Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
 
 
 
@@ -61,5 +61,16 @@ Route::controller(ProductController::class)->group(function() {
 Route::resource('products', ProductController::class);
 
 
+
+//mam er admin
+Route::get('/admin', function () {
+     return view('layout.master');
+ });
+
+
+
+Route::get('/test', function () {
+    return view('products.test.newtest');
+});
 
 

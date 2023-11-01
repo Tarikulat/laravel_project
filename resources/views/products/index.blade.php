@@ -1,5 +1,4 @@
-@extends('products.layouts')
-
+@extends('Backend.admin.dhead')
 @section('content')
 
 <div class="row justify-content-center mt-3">

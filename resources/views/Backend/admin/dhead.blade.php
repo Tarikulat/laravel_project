@@ -60,7 +60,10 @@
 			</nav>
 			<!-- /.navbar -->
 
-<!-- Main Sidebar Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -144,6 +147,13 @@
     </div>
     <!-- /.sidebar -->
  </aside>
+        </div>
+        <div class="col-md-8">
+        @yield('content')
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -161,7 +171,6 @@
 		<!-- AdminLTE for demo purposes -->
 		<script src="{{ asset('admin-assets/js/demo.js') }}"></script>
 
-        @yield('content')
 	</body>
 </html>
 
