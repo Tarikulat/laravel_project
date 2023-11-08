@@ -32,7 +32,7 @@ Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front
 // Route::group(['prefix' => 'admin'],function(){
 
 //     Route::group(['middleware' => 'admin.guest'],function(){
-//         Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+       Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
 //         Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
 
 //     });
