@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class AdminLoginController extends Controller
 {
     public function index() {
-        return view('Backend.admin.login');
+        return view('admin.login');
     }
 
     public function authenticate(Request $request){
@@ -31,7 +31,7 @@ class AdminLoginController extends Controller
              }
 
         } else {
-            return redirect()->route('Backend.admin.login')
+            return redirect()->route('admin.login')
             ->withErrors($validator)
             ->withInput($request->only('email'));
         }

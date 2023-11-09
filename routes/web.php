@@ -18,31 +18,37 @@ use App\Http\Controllers\ProductController;          //..product
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 //....Tanvir start Router create.......
 
-Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
+Route::get('/admin/login',[AdminLoginController::class,'index'])->name('admin.login');
+
+
+
+
+
+// Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
 
 
 
 //admin login Routes below...........
 // Route::group(['prefix' => 'admin'],function(){
 
-//     Route::group(['middleware' => 'admin.guest'],function(){
-       Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
-//         Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
+//    Route::group(['middleware' => 'admin.guest'],function(){
+//        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+//        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
 
 //     });
 
-//     Route::group(['middlewere' => 'admin.auth'],function(){
+//    Route::group(['middlewere' => 'admin.auth'],function(){
 
 
-//     });
+//    });
 
-// });
+//  });
 
 
 
