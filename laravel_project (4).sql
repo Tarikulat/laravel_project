@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2023 at 08:16 AM
+-- Generation Time: Nov 11, 2023 at 01:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel_project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -59,7 +75,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2023_10_24_124741_alter_user_table', 1),
-(6, '2023_10_28_105067_create_products_table', 1);
+(6, '2023_10_28_105067_create_products_table', 1),
+(7, '2023_11_10_104930_create_categories_table', 2);
 
 -- --------------------------------------------------------
 
@@ -105,10 +122,6 @@ CREATE TABLE `products` (
   `quantity` int(11) NOT NULL,
   `price` decimal(8,2) NOT NULL,
   `description` text DEFAULT NULL,
-  `discount` varchar(150) NOT NULL,
-  `catagory` varchar(150) NOT NULL,
-  `image` varchar(150) NOT NULL,
-  `status` varchar(150) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -117,12 +130,8 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `code`, `name`, `quantity`, `price`, `description`, `discount`, `catagory`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(2, '78457', 'Tanvir', 4, 56564.00, 'new products', '', '', '', '0', '2023-10-28 00:38:39', '2023-10-28 00:38:59'),
-(4, '784575', 'Tanvir', 345, 567.00, 'GFGH G', '', '', '', '0', '2023-10-29 23:14:06', '2023-10-29 23:14:06'),
-(5, '55 77', 't', 54, 2.00, 'dis g', '', '', '', '0', '2023-10-29 23:28:12', '2023-10-30 00:17:10'),
-(6, '7845', 'Rakib', 56, 467.00, 'fgfh', '46', '3', 'download (7).jpg', '1', '2023-10-30 01:04:33', '2023-10-30 01:04:33'),
-(7, '44', 'hh', 5, 4.00, 'gg', '3', 'ghdf', 'download (2).jpg', 'r', '2023-10-30 01:07:50', '2023-10-30 01:07:50');
+INSERT INTO `products` (`id`, `code`, `name`, `quantity`, `price`, `description`, `created_at`, `updated_at`) VALUES
+(2, '78457', 'Tanvir', 4, 56564.00, 'new products', '2023-10-28 00:38:39', '2023-10-28 00:38:59');
 
 -- --------------------------------------------------------
 
@@ -143,8 +152,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@exapmple.com', 2, NULL, '$2y$10$qltGPuzcQUNjM6eSq3KE8utPalbYVKqgvF4PWgalgxLtAEZiAiWfy', NULL, '2023-11-09 11:03:14', '2023-11-09 11:03:14'),
+(2, 'Tarikul Islam', 'tarikul@gmail.com', 1, NULL, '$2y$10$d5OaF7SPQ4tpzwAv2r.jCet28M0GyfNz7xHNzhXjoaVmWGi2cIIDC', NULL, '2023-11-09 11:15:08', '2023-11-09 11:15:08');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -192,6 +215,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -201,7 +230,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -213,13 +242,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
