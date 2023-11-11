@@ -1,7 +1,6 @@
-
 @extends('admin.layouts.app')
+<!-- (tan this is called chailled layouts pages) -->
 
-{{-- (tan this is called chailled layouts pages) --}}
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -17,16 +16,15 @@
     </div>
     <!-- /.container-fluid -->
 </section>
+
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
     <div class="container-fluid">
-
-
         <div class="card">
             <div class="card-body">
-                <div class="row">
 
+                <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="name">Name</label>
@@ -45,8 +43,8 @@
                         <div class="mb-3">
                             <label for="status">Status</label>
                             <select type="text" name="status" id="status" class="form-control">
-                            <option value="1">Action</option>
-                            <option value="0">Block</option>
+                                <option value="1">Action</option>
+                                <option value="0">Block</option>
                             </select>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Laravel Shop :: Administrative Panel</title>
+		<title>E-Lifestyle Shop :: Administrative Panel</title>
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 		<!-- Font Awesome -->
@@ -67,31 +67,24 @@
 
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
-                {{-- tan for section layout content pages home (parent content er moddho kisu replace
-                    korar jonno yield use kora hoi) --}}
-
+                <!-- tan for section layout content pages home (parent content er moddho kisu replace
+                    korar jonno yield use kora hoi) -->
 
             @yield('content')
-
-
-
 
 			</div>
 			<!-- /.content-wrapper -->
 			<footer class="main-footer">
 
-				<strong>Copyright &copy; 2014-2022 AmazingShop All rights reserved.
+				<strong>Copyright &copy; 2023 AmazingShop All rights reserved.
 			</footer>
-
 		</div>
+
 		<!-- ./wrapper -->
 		<!-- jQuery -->
 		<script src="{{ asset ('admin-assets/plugins/jquery/jquery.min.js') }}"></script>
 		<!-- Bootstrap 4 -->
 		<script src="{{ asset ('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-		<!-- AdminLTE App -->
 		<script src="{{ asset ('admin-assets/js/adminlte.min.js') }}"></script>
-		<!-- AdminLTE for demo purposes -->
-		{{-- <script src="js/demo.js"></script> --}}
 	</body>
 </html>
