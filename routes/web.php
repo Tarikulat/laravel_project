@@ -44,7 +44,19 @@ Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
  Route::get('/categories',[CategoryController::class,'store'])->name('categories.store');
 
 
+ Route::get('/getSlug',[CategoryController::class,'create'])->name('categories.create');
 
+
+Route::get('/getSlug',function(Request $request){
+    if (!empty($request->title)) {
+        $slug = Str::slug($request->title);
+    }
+    return response()->json([
+        'status' => true,
+        'slug' => $slug
+    ]);
+
+})->name('getSlug');
 
 
 });

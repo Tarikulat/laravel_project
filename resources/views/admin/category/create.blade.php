@@ -81,9 +81,11 @@ $("#categoryform").submit(function(event){
         success: function(response){
 
          if (response["status"]== true) {
+
             $("#name").removeClass('is-invalid')
               .siblings('p')
               .removeClass('invalid-feedback').html("");
+
               $("#slug").addClass('is-invalid')
               .siblings('p')
               .addClass('invalid-feedback').html("");
@@ -94,6 +96,7 @@ $("#categoryform").submit(function(event){
               $("#name").addClass('is-invalid')
               .siblings('p')
               .addClass('invalid-feedback').html(errors['name']);
+
             } else {
                 $("#name").removeClass('is-invalid')
               .siblings('p')
@@ -115,7 +118,7 @@ $("#categoryform").submit(function(event){
             }
          }
 
-
+//last part cheking..............................
             var errors = response['errors'];
 
             if(errors['name']){
@@ -127,8 +130,6 @@ $("#categoryform").submit(function(event){
               .siblings('p')
               .removeClass('invalid-feedback').html("");
             }
-
-
 
             if(errors['slug']){
               $("#slug").addClass('is-invalid')
@@ -145,5 +146,21 @@ $("#categoryform").submit(function(event){
         }
     })
 });
+
+$('#name').change(function(){
+    $.ajax({
+        url: '{{ route("categories.store") }}',
+        type: 'post',
+        data: element.serializeArray(),
+        dataType: 'json',
+
+        success: function(response){
+
+        }
+
+
+});
+
+        });
 </script>
 @endsection
