@@ -15,7 +15,7 @@
     <!-- /.container-fluid -->
 </section>
 
-<!-- Main content -->
+<!-- Main content start-->
 <section class="content">
     <!-- Default box -->
     <div class="container-fluid">

@@ -7,7 +7,7 @@
     <title>Login Admin Panel</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
+    <!-- Font Awesome here -->
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin-assets/css/adminlte.min.css') }}">
@@ -16,7 +16,7 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
+        <!-- /.login-logo section -->
         @include('admin.message')
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
@@ -79,7 +79,7 @@
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="{{ asset('admin-assets/plugins/jquery/jquery.min.js') }}"></script>
-    <!-- Bootstrap 4 -->
+    <!-- Bootstrap 4 this file link-->
     <script src="{{ asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/adminlte.min.js') }}"></script>
     {{-- <script src="{{ asset('admin-assets/js/demo.js') }}"></script> --}}
