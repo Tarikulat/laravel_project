@@ -1,5 +1,7 @@
 @extends('products.layouts')
 
+
+{{-- product edit --}}
 @section('content')
 
 <div class="row justify-content-center mt-3">

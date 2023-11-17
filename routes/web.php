@@ -29,7 +29,7 @@ use App\Http\Controllers\PcartController;
      return view('welcome');
  });
 
-//....Tanvir start Router create.......
+//....Tanvir start Router create below.......
 
 
 Route::group(['prefix' => 'admin'],function(){
@@ -67,7 +67,7 @@ Route::get('/getSlug',function(Request $request){
 });
 
 
-//........pcart routes..................
+//........pcart Routes..................
 
 Route::post('/session', [StripeController::class, 'session'])->name('session');
 Route::get('/success', [StripeController::class, 'success'])->name('success');
@@ -120,7 +120,7 @@ Route::resource('products', ProductController::class);
 
 
 
-//mam er admin
+//mam er admin below..........
 Route::get('/admin', function () {
      return view('layout.master');
  });
