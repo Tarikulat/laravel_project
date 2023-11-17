@@ -25,9 +25,9 @@ use App\Http\Controllers\PcartController;
 |
 */
 
- Route::get('/', function () {
-     return view('welcome');
- });
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
 
 //....Tanvir start Router create below.......
 
@@ -82,25 +82,25 @@ Route::delete('remove-from-cart', [PcartController::class, 'remove'])->name('rem
 
 
 
-// Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
+Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
 
 
 
 //admin login Routes below...........
-// Route::group(['prefix' => 'admin'],function(){
+Route::group(['prefix' => 'admin'],function(){
 
-//    Route::group(['middleware' => 'admin.guest'],function(){
-//        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
-//        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
+   Route::group(['middleware' => 'admin.guest'],function(){
+       Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
+       Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
 
-//     });
+    });
 
-//    Route::group(['middlewere' => 'admin.auth'],function(){
+   Route::group(['middlewere' => 'admin.auth'],function(){
 
 
-//    });
+   });
 
-//  });
+ });
 
 
 
@@ -108,7 +108,6 @@ Route::delete('remove-from-cart', [PcartController::class, 'remove'])->name('rem
 Route::controller(DashboardController::class)->group(function() {
     Route::get('/r', 'index')-> name('dhome');
 });
-
 
 Route::controller(ProductController::class)->group(function() {
     Route::get('/t', 'index')-> name('layouts');
