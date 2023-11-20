@@ -7,6 +7,8 @@
     <title>Laravel 10 Shopping Cart add to cart with Stripe Payment Gateway</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 </head>
+
+{{-- pcart_cancel body start --}}
 <body>
     <div class="container">
         <div class='row'>

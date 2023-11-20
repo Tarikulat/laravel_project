@@ -10,8 +10,8 @@ use Illuminate\support\Str;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProductController;          //..product
 
-use App\Http\Controllers\StripeController;
-use App\Http\Controllers\PcartController;
+use App\Http\Controllers\StripeController;          //strip
+use App\Http\Controllers\PcartController;          //pcart
 
 
 /*
@@ -29,7 +29,7 @@ use App\Http\Controllers\PcartController;
 //      return view('welcome');
 //  });
 
-//....Tanvir start Router create below.......
+//......Tanvir start Router create below.......
 
 
 Route::group(['prefix' => 'admin'],function(){
@@ -67,7 +67,7 @@ Route::get('/getSlug',function(Request $request){
 });
 
 
-//........pcart Routes..................
+//........pcart Routes start..................
 
 Route::post('/session', [StripeController::class, 'session'])->name('session');
 Route::get('/success', [StripeController::class, 'success'])->name('success');
