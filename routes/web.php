@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\support\Str;
 
 use App\Http\Controllers\FrontController;
-use App\Http\Controllers\ProductController;          //..product
+
 
 use App\Http\Controllers\StripeController;          //strip
 use App\Http\Controllers\PcartController;          //pcart
@@ -31,6 +31,14 @@ use App\Http\Controllers\PcartController;          //pcart
 
 //......Tanvir start Router create below.......
 
+//.........Product............................
+Route::get('/product/data', [ProductController::class, 'data'])->name('product.data');
+Route::post('/product/delete-selected', [ProductController::class, 'deleteSelected'])->name('product.delete_selected');
+Route::post('/product/cetak-barcode', [ProductController::class, 'cetakBarcode'])->name('product.cetak_barcode');
+Route::resource('/product', ProductController::class);
+
+
+
 
 Route::group(['prefix' => 'admin'],function(){
 
@@ -44,10 +52,6 @@ Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard'
 Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
 
 
-    //..............Category Routes................
- Route::get('/categories/create',[CategoryController::class,'create'])->name('categories.create');
- Route::get('/categories',[CategoryController::class,'store'])->name('categories.store');
- Route::get('/getSlug',[CategoryController::class,'create'])->name('categories.create');
 
 
 Route::get('/getSlug',function(Request $request){
@@ -92,14 +96,10 @@ Route::group(['prefix' => 'admin'],function(){
    Route::group(['middleware' => 'admin.guest'],function(){
        Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
        Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name('admin.authanticate');
-
     });
 
    Route::group(['middlewere' => 'admin.auth'],function(){
-
-
    });
-
  });
 
 
