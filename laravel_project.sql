@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 08:53 AM
+-- Generation Time: Nov 29, 2023 at 08:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -77,7 +77,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2023_10_24_124741_alter_user_table', 1),
 (6, '2023_10_28_105067_create_products_table', 1),
 (7, '2023_11_10_104930_create_categories_table', 2),
-(8, '2023_11_16_054216_create_pcarts_table', 3);
+(8, '2023_11_16_054216_create_pcarts_table', 3),
+(9, '2023_11_29_175821_create_product_table', 4);
 
 -- --------------------------------------------------------
 
@@ -137,26 +138,21 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `products` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` decimal(8,2) NOT NULL,
-  `description` text DEFAULT NULL,
+CREATE TABLE `product` (
+  `id_product` int(10) UNSIGNED NOT NULL,
+  `id_category` int(10) UNSIGNED NOT NULL,
+  `nama_product` varchar(255) NOT NULL,
+  `brand` varchar(255) DEFAULT NULL,
+  `purchase_price` int(11) NOT NULL,
+  `discount` tinyint(4) NOT NULL DEFAULT 0,
+  `sell_price` int(11) NOT NULL,
+  `stok` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `code`, `name`, `quantity`, `price`, `description`, `created_at`, `updated_at`) VALUES
-(2, '78457', 'Tanvir', 4, 56564.00, 'new products', '2023-10-28 00:38:39', '2023-10-28 00:38:59');
 
 -- --------------------------------------------------------
 
@@ -228,11 +224,11 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `products`
+-- Indexes for table `product`
 --
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `products_code_unique` (`code`);
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id_product`),
+  ADD UNIQUE KEY `product_nama_product_unique` (`nama_product`);
 
 --
 -- Indexes for table `users`
@@ -261,7 +257,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pcarts`
@@ -276,10 +272,10 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `product`
 --
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `product`
+  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

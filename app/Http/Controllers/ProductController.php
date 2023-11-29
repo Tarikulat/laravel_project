@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Produk;
+use App\Models\Product;
 use PDF;
 
 class ProductController extends Controller
