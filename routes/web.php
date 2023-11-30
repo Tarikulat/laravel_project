@@ -35,9 +35,9 @@ use App\Http\Controllers\PcartController;          //pcart
 |
 */
 
-//  Route::get('/', function () {
-//      return view('welcome');
-//  });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 //............Tanvir start Router create below.......
 
