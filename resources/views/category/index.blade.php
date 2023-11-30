@@ -14,7 +14,7 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="box-header with-border">
-                <button onclick="addForm('{{ route('kategori.store') }}')" class="btn btn-success btn-flat"><i class="fa fa-plus-circle"></i> Add New Category</button>
+                <button onclick="addForm('{{ route('category.store') }}')" class="btn btn-success btn-flat"><i class="fa fa-plus-circle"></i> Add New Category</button>
             </div>
             <div class="box-body table-responsive">
                 <table class="table table-stiped table-bordered table-hover">
@@ -30,7 +30,7 @@
 </div>
 
 
-@includeIf('kategori.form')
+@includeIf('category.form')
 @endsection
 
 @push('scripts')
@@ -48,7 +48,7 @@
             },
             columns: [
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
-                {data: 'nama_kategori'},
+                {data: 'nama_category'},
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
@@ -70,12 +70,12 @@
 
     function addForm(url) {
         $('#modal-form').modal('show');
-        $('#modal-form .modal-title').text('Add Categort');
+        $('#modal-form .modal-title').text('Add Category');
 
         $('#modal-form form')[0].reset();
         $('#modal-form form').attr('action', url);
         $('#modal-form [name=_method]').val('post');
-        $('#modal-form [name=nama_kategori]').focus();
+        $('#modal-form [name=nama_category]').focus();
     }
 
     function editForm(url) {
@@ -85,11 +85,11 @@
         $('#modal-form form')[0].reset();
         $('#modal-form form').attr('action', url);
         $('#modal-form [name=_method]').val('put');
-        $('#modal-form [name=nama_kategori]').focus();
+        $('#modal-form [name=nama_category]').focus();
 
         $.get(url)
             .done((response) => {
-                $('#modal-form [name=nama_kategori]').val(response.nama_kategori);
+                $('#modal-form [name=nama_category]').val(response.nama_kategori);
             })
             .fail((errors) => {
                 alert('Unable to display data');
