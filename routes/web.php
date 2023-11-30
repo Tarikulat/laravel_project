@@ -1,7 +1,22 @@
 <?php
+use App\Http\Controllers\{
+    DashboardController,
+    CategoryController,
+    ProductController,
+
+    LaporanController,
+    MemberController,
+    PengeluaranController,
+    PembelianController,
+    PembelianDetailController,
+    PenjualanController,
+    PenjualanDetailController,
+    SettingController,
+    SupplierController,
+    UserController,
+};
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\AdminLoginController;   //..login
-use App\Http\Controllers\admin\HomeController; //admindashboard home
 use Illuminate\Http\Request;
 use Illuminate\support\Str;
 use App\Http\Controllers\FrontController;
@@ -26,12 +41,24 @@ use App\Http\Controllers\PcartController;          //pcart
 
 //............Tanvir start Router create below.......
 
+//............Dashboard + Category..................
+Route::group(['middleware' => 'auth'], function () {
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::group(['middleware' => 'level:1'], function () {
+Route::get('/category/data', [CategoryController::class, 'data'])->name('category.data');
+Route::resource('/category', CategoryController::class);
+//....................................................
+
 //.............Product................................
 Route::get('/product/data', [ProductController::class, 'data'])->name('product.data');
 Route::post('/product/delete-selected', [ProductController::class, 'deleteSelected'])->name('product.delete_selected');
 Route::post('/product/cetak-barcode', [ProductController::class, 'cetakBarcode'])->name('product.cetak_barcode');
 Route::resource('/product', ProductController::class);
 //.....................................................
+
+});
+});
 
 //...............pcart Routes start....................
 Route::post('/session', [StripeController::class, 'session'])->name('session');
@@ -46,7 +73,7 @@ Route::delete('remove-from-cart', [PcartController::class, 'remove'])->name('rem
 
 
 
-//.............Login Auth.........................
+//.............Login Auth old.........................
 Route::group(['prefix' => 'admin'],function(){
 Route::group(['middleware' => 'admin.guest'],function(){
 Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
@@ -67,7 +94,7 @@ Route::get('/getSlug',function(Request $request){
     });
     });
 
-//admin login Routes below...........
+//admin login Routes below old...........
 Route::group(['prefix' => 'admin'],function(){
 Route::group(['middleware' => 'admin.guest'],function(){
 Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
@@ -77,6 +104,8 @@ Route::post('/authanticate',[AdminLoginController::class,'authanticate'])->name(
 Route::group(['middlewere' => 'admin.auth'],function(){
 });
 });
+//..........................................................
 
-Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
+
+// Route::get('/',[FrontController::class,'index'])->name('Frontend.home'); //front UI show
 
