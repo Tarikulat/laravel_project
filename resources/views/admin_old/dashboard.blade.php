@@ -2,7 +2,7 @@
 <!--(tan this is called chailled layouts pages)  -->
 
 @section('content')
-<!-- Content Header (Page header) dash-->
+<!-- Content Header (Page header) dash board-->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
