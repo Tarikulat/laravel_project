@@ -34,6 +34,7 @@ use App\Http\Controllers\PcartController;          //pcart
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// route section
 
  Route::get('/', function () {
      return view('welcome');
