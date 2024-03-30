@@ -11,6 +11,7 @@
             <th style="width:10%"></th>
         </tr>
     </thead>
+<!--     tbody start -->
     <tbody>
         @php $total = 0 @endphp
         @if(session('cart'))
