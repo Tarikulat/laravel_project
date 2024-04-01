@@ -23,7 +23,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\StripeController;          //strip
 use App\Http\Controllers\PcartController;          //pcart
 
-
+// router section
 /*
 |--------------------------------------------------------------------------
 | Web Routes
