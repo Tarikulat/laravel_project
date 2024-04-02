@@ -12,6 +12,7 @@
         </tr>
     </thead>
 <!--     tbody start -->
+<!--     tbody start -->
     <tbody>
         @php $total = 0 @endphp
         @if(session('cart'))
