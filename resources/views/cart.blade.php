@@ -56,6 +56,7 @@
 </table>
 @endsection
 
+<!-- update_cart -->
 @section('scripts')
 <script type="text/javascript">
 
