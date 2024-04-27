@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Artisan;
 | simple approach to interacting with each command's IO methods.
 |
 */
+// ands. Each Closure is bound to a command
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
